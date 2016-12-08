@@ -115,6 +115,7 @@ if(node_env === 'development') {
 		//console.log('UAA service URL is  '+uaaService[0].credentials.uri)
 		AUTHORIZATION_URL = uaaService[0].credentials.uri;
 		TOKEN_URL = uaaService[0].credentials.uri;
+		console.log("TEST TEST TEST ");
 	}
 	if(assetService) {
 		assetURL = assetService[0].credentials.uri + "/" + process.env.assetMachine;
@@ -334,6 +335,7 @@ app.get('/secure', passport.authenticate('main', {
 
 //logout route
 app.get('/logout', function(req, res) {
+	console.log("TEST TEST");
 	req.session.destroy();
 	req.logout();
 	cfStrategy.reset(); //reset auth tokens
