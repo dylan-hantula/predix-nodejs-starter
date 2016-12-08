@@ -115,7 +115,6 @@ if(node_env === 'development') {
 		//console.log('UAA service URL is  '+uaaService[0].credentials.uri)
 		AUTHORIZATION_URL = uaaService[0].credentials.uri;
 		TOKEN_URL = uaaService[0].credentials.uri;
-		console.log("TEST TEST TEST ");
 	}
 	if(assetService) {
 		assetURL = assetService[0].credentials.uri + "/" + process.env.assetMachine;
@@ -318,6 +317,8 @@ app.use('/predix-api',
 app.get('/callback', passport.authenticate('predix', {
 	failureRedirect: '/'
 }), function(req, res) {
+	console.log("HERE IS THE TOKEN");
+	console.log(req.user.ticket.access_token);
 	console.log('Redirecting to secure route...');
 	// TODO: do we need this?
 	// req.session.token = token;
@@ -335,7 +336,6 @@ app.get('/secure', passport.authenticate('main', {
 
 //logout route
 app.get('/logout', function(req, res) {
-	console.log("TEST TEST");
 	req.session.destroy();
 	req.logout();
 	cfStrategy.reset(); //reset auth tokens
