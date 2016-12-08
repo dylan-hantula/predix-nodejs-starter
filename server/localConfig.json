@@ -1,6 +1,6 @@
 {
   "development": {
-    "clientId": "{UAA Client ID created}",
+    "clientId": "hackathonUAA",
     "uaaURL": "https://ffa8087c-6bef-4f83-9ffb-5be67fcac388.predix-uaa.run.aws-usw02-pr.ice.predix.io",
     "base64ClientCredential": "aGFja2F0aG9uVUFBOnNlY3JldA==",
     "appURL": "http://localhost:3000",

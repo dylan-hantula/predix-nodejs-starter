@@ -47,6 +47,7 @@ function getMachineServiceData() {
 		request.onerror = function() {
 			document.getElementById("windService_machine_yearly").innerHTML = "Error getting data for tags";
 		};
+		console.log("TESTING");
 		request.send();
 	}
  	getAssetData(connectedDeviceConfig.isConnectedAssetEnabled,tagString) ;
